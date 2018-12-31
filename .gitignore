@@ -1,8 +1,11 @@
-
-\.idea/
-/**/.terraform/
 /**/node_modules/
 
-terraform/files/\.DS_Store
+**/\.idea/
+**/\.DS_Store
 
+/**/.terraform/
 *.tfstate*
+
+
+
+
