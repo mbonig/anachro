@@ -1,5 +1,4 @@
 const {createStore} = require('redux');
-const {from} = require('rxjs/observable/from');
 const AWS = require('aws-sdk');
 const reducers = require('./reducers');
 const ddb = new AWS.DynamoDB.DocumentClient();

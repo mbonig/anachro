@@ -43,6 +43,14 @@ resource "aws_iam_policy" "read-write-to-ddb" {
           ],
           "Resource": "arn:aws:logs:us-east-1:${data.aws_caller_identity.current.account_id}:*"
       },
+      {
+            "Effect": "Allow",
+            "Action": [
+                "execute-api:Invoke",
+                "execute-api:ManageConnections"
+            ],
+            "Resource": "arn:aws:execute-api:*:${data.aws_caller_identity.current.account_id}:*"
+      },
     {
       "Effect": "Allow",
       "Action": [
