@@ -1,4 +1,3 @@
-
 resource "aws_lambda_function" "create_event" {
   function_name    = "${var.model_name}-anarcho_create_event"
   handler          = "create.handler"
@@ -11,8 +10,11 @@ resource "aws_lambda_function" "create_event" {
 
   environment {
     variables {
-      EVENT_TABLE_NAME = "${aws_dynamodb_table.events.name}"
-      HASH_KEY    = "${aws_dynamodb_table.events.hash_key}"
+      EVENT_TABLE__NAME     = "${aws_dynamodb_table.events.name}"
+      EVENT_TABLE__HASH_KEY = "${aws_dynamodb_table.events.hash_key}"
+      MODEL_TABLE__NAME     = "${aws_dynamodb_table.model.name}"
+      MODEL_TABLE__HASH_KEY = "${aws_dynamodb_table.model.hash_key}"
+      NAMESPACE             = "default"
     }
   }
 }
